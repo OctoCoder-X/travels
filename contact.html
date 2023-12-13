@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=" stylesheet" href="assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/fontawesome/js/all.js">
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="icon" type="image/x-icon" href="images/beta.png">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container">
+        <form>
+            <h1>Register</h1>
+            <h2>Enter your credentials below to create a free account</h2>
+            <div class="form-group">
+                <label for="first_name">First Name  <i class="fa-regular fa-user"></i></label>
+                <input type="text" name="first_name" id="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name  <i class="fa-regular fa-user"></i></label>
+                <input type="text" name="last_name" id="last_name" required>
+                <div id="last_name-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email  <i class="fa-solid fa-at"></i></label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number     <i class="fa-solid fa-phone"></i></label>
+                <input type="tel" name="phone" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password  <i class="fa-regular fa-eye-slash"></i></label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password  <i class="fa-regular fa-eye-slash"></i></label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="fa-solid fa-chevron-right">
+            </div>
+            <h3>Already Have An Account, <a href="login.html">Login Now</a></h3>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", function(event) {
+            const password = document.getElementById("password").value;
+            const confirm_password = document.getElementById("confirm_password").value;
+
+            if (password !== confirm_password) {
+                alert("Passwords do not match");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+
+        const firstNameInput = document.getElementById("first_name");
+    const firstNameError = document.getElementById("first_name-error");
+
+    first_nameInput.addEventListener("input", function() {
+        const first_name = first_nameInput.value;
+        const isValid = isfirst_nameValid(firstName);
+
+        if (isValid) {
+            first_nameError.textContent = "";
+        } else {
+            first_nameError.textContent = "First Name is required.";
+        }
+    });
+
+    // Validation function for First Name
+    function isfirst_nameValid(firstName) {
+        return first_name.trim().length > 0;
+    };
+
+    const lastNameInput = document.getElementById("last_name");
+    const lastNameError = document.getElementById("last_name-error");
+
+    lastNameInput.addEventListener("input", function () {
+        const lastName = lastNameInput.value;
+        const isValid = isLastNameValid(lastName);
+
+        if (isValid) {
+            lastNameError.textContent = "";
+        } else {
+            lastNameError.textContent = "Invalid last name";
+        }
+    });
+
+    function isLastNameValid(lastName) {
+        // You can add your validation criteria here
+        // For example, check if the last name is at least 2 characters long
+        return lastName.trim().length >= 2;
+    }
+     
+    </script>
+       <script src="bootstrap/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

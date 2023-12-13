@@ -1,0 +1,107 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    font-family: "poppins", sans-serif;
+    background-image: url(images/airplane-airport-runway-sunset-tasmania_31965-3697.avif);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.me{
+    display: flex;
+}
+.mee{
+    padding-top: 15px;
+}
+header h1{
+    background-attachment: fixed;
+    background-color: whitesmoke;
+    margin-left: 600px;
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.form-container {
+    margin-top: 80px;
+    width: 500px;
+    height: 85vh;
+    margin-left: 550px;
+    padding: 30px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.form-container h1{
+    margin-left: 100px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.form-container h2{
+    margin-left: 23px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0056b3;
+}
+
+.form-container h3{
+    margin-left: 50px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.form-container a{
+    margin-left: 3px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.form-container a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+input[type="submit"]:hover {
+    background-color: #4a00f8;
+}
+

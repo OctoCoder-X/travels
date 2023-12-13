@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+}
+body{
+    background: gray;
+}
+.header{
+    background: white;
+    padding: 15px;
+}
+.logo{
+    width: 60px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav a{
+    color: black;
+    text-decoration: none;
+}
+.nav a:hover{
+    text-decoration: underline;
+}
+.col2:hover{
+    text-decoration: underline;
+}
+.footer{
+    padding: 150px 20px;
+    width: 100%;
+    border-bottom: 3px lightskyblue dotted;
+}
+.ft-logo{
+    width: 50px;
+}
+h3{
+    font-weight: 700;
+    font-size: 21px;
+}
+.col3{
+    padding: 20px;
+    width: 40px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=" stylesheet" href="assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/fontawesome/js/all.js">
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="icon" type="image/x-icon" href="images/beta.png">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container" id="login-form">
+        <form>
+            <h1>Login Form</h1>
+            <div class="form-group">
+                <label for="email">Email  <i class="fa-solid fa-at"></i></label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password  <i class="fa-regular fa-eye-slash"></i></label>
+                <input type="password" name="password" id="password" required>
+                <div id="password-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+            <h3>Don't Have An Account ?<a href="contact.html">Create Account </a></h3>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Add your validation logic here
+            if (!emailIsValid(email) || !passwordIsValid(password)) {
+                alert("Please enter a valid email and password.");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+
+        function emailIsValid(email) {
+            // You can use a regular expression or any validation logic for email
+            // For example, a basic email validation using a regular expression:
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function passwordIsValid(password) {
+            // You can add more complex password validation logic here
+            // For example, requiring a minimum length
+            return password.length >= 6;
+        }
+          
+                const passwordInput = document.getElementById("password");
+                const passwordError = document.getElementById("password-error");
+            
+                passwordInput.addEventListener("input", function () {
+                    const password = passwordInput.value;
+                    const isValid = isPasswordValid(password);
+            
+                    if (!isValid) {
+                        passwordError.textContent = "Password must be at least 6 characters long.";
+                    } else {
+                        passwordError.textContent = "";
+                    }
+                });
+            
+                document.getElementById("login-form").addEventListener("submit", function (event) {
+                    const password = passwordInput.value;
+                    const isValid = isPasswordValid(password);
+            
+                    if (!isValid) {
+                        passwordError.textContent = "Password must be at least 6 characters long.";
+                        event.preventDefault(); // Prevent form submission
+                    } else {
+                        passwordError.textContent = "";
+                    }
+                });
+            
+                function isPasswordValid(password) {
+                    return password.length >= 6;
+                }
+    </script>
+    <script src="bootstrap/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
